@@ -11,6 +11,7 @@ public class Furgoncino extends VeicoloACombustione{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     @Column(nullable = false)
+    @Check(constraints = "peso_trasportabile > 0")
     private int pesoTrasportabile;
 
 

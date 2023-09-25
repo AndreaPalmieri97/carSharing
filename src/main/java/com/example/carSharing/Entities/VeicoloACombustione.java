@@ -8,6 +8,7 @@ import org.hibernate.annotations.Check;
 public class VeicoloACombustione{
 
     @Column(nullable = false)
+    @Check(constraints = "cilindrata > 0")
     protected int cilindrata;
     @Column(nullable = false)
     protected String tipoCombustibile;

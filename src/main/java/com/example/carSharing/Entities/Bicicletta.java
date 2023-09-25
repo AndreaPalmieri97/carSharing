@@ -11,7 +11,11 @@ public class Bicicletta{
     private int id;
 
     @Column(nullable = false)
+    @Check(constraints = "n_marce >= 0")
     private int nMarce;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Veicolo veicolo;
 
     public Bicicletta(int id, int nMarce) {
         this.id = id;

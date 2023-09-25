@@ -13,6 +13,7 @@ public class MonopattinoElettrico extends VeicoloElettrico{
     @Column(nullable = false)
     private String colore;
     @Column(nullable = false)
+    @Check(constraints = "velocita_max > 0")
     private int velocitaMax;
 
     public MonopattinoElettrico(String statoBatteria, int tempoRicarica, int autonomia, int id, String colore, int velocitaMax) {

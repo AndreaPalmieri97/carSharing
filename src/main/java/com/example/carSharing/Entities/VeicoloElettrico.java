@@ -10,8 +10,10 @@ public class VeicoloElettrico{
     @Column(nullable = false)
     protected String statoBatteria;
     @Column(nullable = false)
+    @Check(constraints = "tempo_ricarica > 0")
     protected int tempoRicarica;
     @Column(nullable = false)
+    @Check(constraints = "autonomia >= 0")
     protected int autonomia;
 
     public VeicoloElettrico(String statoBatteria, int tempoRicarica, int autonomia) {

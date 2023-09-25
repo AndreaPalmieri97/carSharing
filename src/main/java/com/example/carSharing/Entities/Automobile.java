@@ -14,6 +14,9 @@ public class Automobile extends VeicoloACombustione{
     @Check(constraints = "n_porte > 0")
     private int nPorte;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Veicolo veicolo;
+
     public Automobile(int cilindrata, String tipoCombustibile, String tipoPatente, String statoCarburante, String targa, int id, int nPorte) {
         super(cilindrata, tipoCombustibile, tipoPatente, statoCarburante, targa);
         this.id = id;
