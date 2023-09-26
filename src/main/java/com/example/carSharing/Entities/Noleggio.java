@@ -1,6 +1,7 @@
 package com.example.carSharing.Entities;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.Check;
 
 import java.time.LocalDateTime;
 @Entity
@@ -15,6 +16,7 @@ public class Noleggio {
     @Column(nullable = false)
     private LocalDateTime dataFine;
     @Column(nullable = false)
+    @Check(constraints = "costo_totale>0")
     private double costoTotale;
     @OneToMany(fetch = FetchType.LAZY)
     private Utente utente;
