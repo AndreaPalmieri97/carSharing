@@ -16,6 +16,9 @@ public class VeicoloElettrico{
     @Check(constraints = "autonomia >= 0")
     protected int autonomia;
 
+    public VeicoloElettrico() {
+    }
+
     public VeicoloElettrico(String statoBatteria, int tempoRicarica, int autonomia) {
         this.statoBatteria = statoBatteria;
         this.tempoRicarica = tempoRicarica;

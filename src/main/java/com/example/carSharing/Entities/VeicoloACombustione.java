@@ -19,6 +19,9 @@ public class VeicoloACombustione{
     @Column(nullable = false)
     protected String targa;
 
+    public VeicoloACombustione() {
+    }
+
     public VeicoloACombustione(int cilindrata, String tipoCombustibile, String tipoPatente, String statoCarburante, String targa) {
         this.cilindrata = cilindrata;
         this.tipoCombustibile = tipoCombustibile;

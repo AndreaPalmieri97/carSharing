@@ -23,6 +23,9 @@ public class Noleggio {
     @ManyToOne(fetch = FetchType.LAZY)
     private Veicolo veicolo;
 
+    public Noleggio() {
+    }
+
     public Noleggio(int id, LocalDateTime dataInizio, LocalDateTime dataFine, double costoTotale, Utente utente, Veicolo veicolo) {
         this.id = id;
         this.dataInizio = dataInizio;

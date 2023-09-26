@@ -29,6 +29,9 @@ public class Veicolo {
     @Check(constraints = "n_posti > 0")
     protected int nPosti;
 
+    public Veicolo() {
+    }
+
     public Veicolo(int id, String marca, String modello, boolean disponibilita, int nRuote,
                    double tariffa, String posizione, int nPosti) {
         this.id = id;

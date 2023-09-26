@@ -15,6 +15,9 @@ public class Moto extends VeicoloACombustione{
     @ManyToOne(fetch = FetchType.LAZY)
     private Veicolo veicolo;
 
+    public Moto() {
+    }
+
     public Moto(int cilindrata, String tipoCombustibile, String tipoPatente, String statoCarburante, String targa, int id, boolean marce, Veicolo veicolo) {
         super(cilindrata, tipoCombustibile, tipoPatente, statoCarburante, targa);
         this.id = id;

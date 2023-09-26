@@ -19,6 +19,9 @@ public class MonopattinoElettrico extends VeicoloElettrico{
     @ManyToOne(fetch = FetchType.LAZY)
     private Veicolo veicolo;
 
+    public MonopattinoElettrico() {
+    }
+
     public MonopattinoElettrico(String statoBatteria, int tempoRicarica, int autonomia, int id, String colore, int velocitaMax, Veicolo veicolo) {
         super(statoBatteria, tempoRicarica, autonomia);
         this.id = id;

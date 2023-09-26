@@ -23,6 +23,9 @@ public class Bicicletta{
         this.veicolo = veicolo;
     }
 
+    public Bicicletta() {
+    }
+
     public int getId() {
         return id;
     }

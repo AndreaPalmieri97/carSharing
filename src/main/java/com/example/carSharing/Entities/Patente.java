@@ -21,6 +21,9 @@ public class Patente {
     @ManyToOne(fetch = FetchType.LAZY)
     private Utente utente;
 
+    public Patente() {
+    }
+
     public Patente(int id, String tipoPatente, LocalDate scadenza, Utente utente) {
         this.id = id;
         this.tipoPatente = tipoPatente;
