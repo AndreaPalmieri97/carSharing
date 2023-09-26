@@ -27,6 +27,7 @@ public class Utente {
     @Check(constraints = "credito_affitti > 0")
     private double creditoAffitti;
 
+
     public Utente(int id, String nome, String cognome, LocalDate dataDiNascita, String codiceFiscale, boolean casco, double creditoAffitti) {
         this.id = id;
         this.nome = nome;

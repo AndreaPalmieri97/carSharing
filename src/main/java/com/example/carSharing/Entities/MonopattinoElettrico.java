@@ -16,11 +16,31 @@ public class MonopattinoElettrico extends VeicoloElettrico{
     @Check(constraints = "velocita_max > 0")
     private int velocitaMax;
 
-    public MonopattinoElettrico(String statoBatteria, int tempoRicarica, int autonomia, int id, String colore, int velocitaMax) {
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Veicolo veicolo;
+
+    public MonopattinoElettrico(String statoBatteria, int tempoRicarica, int autonomia, int id, String colore, int velocitaMax, Veicolo veicolo) {
         super(statoBatteria, tempoRicarica, autonomia);
         this.id = id;
         this.colore = colore;
         this.velocitaMax = velocitaMax;
+        this.veicolo = veicolo;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public Veicolo getVeicolo() {
+        return veicolo;
+    }
+
+    public void setVeicolo(Veicolo veicolo) {
+        this.veicolo = veicolo;
     }
 
     public String getColore() {

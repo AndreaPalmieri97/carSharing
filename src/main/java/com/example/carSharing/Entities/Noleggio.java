@@ -18,9 +18,9 @@ public class Noleggio {
     @Column(nullable = false)
     @Check(constraints = "costo_totale>0")
     private double costoTotale;
-    @OneToMany(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY)
     private Utente utente;
-    @OneToMany(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY)
     private Veicolo veicolo;
 
     public Noleggio(int id, LocalDateTime dataInizio, LocalDateTime dataFine, double costoTotale, Utente utente, Veicolo veicolo) {

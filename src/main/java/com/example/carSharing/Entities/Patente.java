@@ -18,11 +18,22 @@ public class Patente {
     @Column(nullable = false)
     private LocalDate scadenza;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Utente utente;
 
-    public Patente(int id, String tipoPatente, LocalDate scadenza) {
+    public Patente(int id, String tipoPatente, LocalDate scadenza, Utente utente) {
         this.id = id;
         this.tipoPatente = tipoPatente;
         this.scadenza = scadenza;
+        this.utente = utente;
+    }
+
+    public Utente getUtente() {
+        return utente;
+    }
+
+    public void setUtente(Utente utente) {
+        this.utente = utente;
     }
 
     public int getId() {

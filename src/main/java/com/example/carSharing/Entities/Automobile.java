@@ -17,10 +17,27 @@ public class Automobile extends VeicoloACombustione{
     @ManyToOne(fetch = FetchType.LAZY)
     private Veicolo veicolo;
 
-    public Automobile(int cilindrata, String tipoCombustibile, String tipoPatente, String statoCarburante, String targa, int id, int nPorte) {
+    public Automobile(int cilindrata, String tipoCombustibile, String tipoPatente, String statoCarburante, String targa, int id, int nPorte, Veicolo veicolo) {
         super(cilindrata, tipoCombustibile, tipoPatente, statoCarburante, targa);
         this.id = id;
         this.nPorte = nPorte;
+        this.veicolo = veicolo;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public Veicolo getVeicolo() {
+        return veicolo;
+    }
+
+    public void setVeicolo(Veicolo veicolo) {
+        this.veicolo = veicolo;
     }
 
     public int getnPorte() {
