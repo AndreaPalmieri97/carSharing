@@ -107,4 +107,5 @@ public class Veicolo {
     public void setnPostiVeicolo(int nPosti) {
         this.nPosti = nPosti;
     }
+
 }

@@ -14,14 +14,27 @@ public class UtenteController {
     private UtenteRepo utenteRepo;
 
     @PostMapping("/create")
-    public Utente getUtente(@PathVariable Long id_utente) {
-        Optional<Utente> optionalUtente = utenteRepo.findById(id_utente);
+    public void createUtente(@RequestBody Utente utente){
+        utenteRepo.saveAndFlush(utente);
+    }
+
+    @GetMapping("/get")
+    public Utente getUtente(@RequestParam long id) {
+        Optional<Utente> optionalUtente = utenteRepo.findById(id);
         if (optionalUtente.isEmpty()) throw new IllegalArgumentException("l'utente non esiste!");
         return optionalUtente.get();
     }
-    @DeleteMapping("/delete/{id}")
-    public void deleteUtente(@PathVariable long id){
+
+    @DeleteMapping("/delete")
+    public void deleteUtente(@RequestParam long id){
         utenteRepo.deleteById(id);
     }
+
+    @PutMapping("/update")
+    public void updateUtente(@RequestParam Utente utente){
+
+    }
+
+
 
 }
