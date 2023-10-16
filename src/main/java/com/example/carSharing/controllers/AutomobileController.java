@@ -1,6 +1,7 @@
 package com.example.carSharing.controllers;
 
 import com.example.carSharing.Entities.Automobile;
+import com.example.carSharing.Entities.Furgoncino;
 import com.example.carSharing.Entities.Utente;
 import com.example.carSharing.repositories.AutomobileRepo;
 import com.example.carSharing.repositories.UtenteRepo;
@@ -34,6 +35,6 @@ public class AutomobileController {
 
     @PutMapping("/update")
     public void updateAuto(@RequestParam Automobile automobile){
-
     }
+
 }

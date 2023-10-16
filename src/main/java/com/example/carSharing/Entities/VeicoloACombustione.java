@@ -2,8 +2,13 @@ package com.example.carSharing.Entities;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.MappedSuperclass;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.hibernate.annotations.Check;
-
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 @MappedSuperclass
 public class VeicoloACombustione{
 
@@ -18,56 +23,5 @@ public class VeicoloACombustione{
     protected String statoCarburante;
     @Column(nullable = false)
     protected String targa;
-
-    public VeicoloACombustione() {
-    }
-
-    public VeicoloACombustione(int cilindrata, String tipoCombustibile, String tipoPatente, String statoCarburante, String targa) {
-        this.cilindrata = cilindrata;
-        this.tipoCombustibile = tipoCombustibile;
-        this.tipoPatente = tipoPatente;
-        this.statoCarburante = statoCarburante;
-        this.targa = targa;
-    }
-
-    public int getCilindrata() {
-        return cilindrata;
-    }
-
-    public void setCilindrata(int cilindrata) {
-        this.cilindrata = cilindrata;
-    }
-
-    public String getTipoCombustibile() {
-        return tipoCombustibile;
-    }
-
-    public void setTipoCombustibile(String tipoCombustibile) {
-        this.tipoCombustibile = tipoCombustibile;
-    }
-
-    public String getTipoPatente() {
-        return tipoPatente;
-    }
-
-    public void setTipoPatente(String tipoPatente) {
-        this.tipoPatente = tipoPatente;
-    }
-
-    public String getStatoCarburante() {
-        return statoCarburante;
-    }
-
-    public void setStatoCarburante(String statoCarburante) {
-        this.statoCarburante = statoCarburante;
-    }
-
-    public String getTarga() {
-        return targa;
-    }
-
-    public void setTarga(String targa) {
-        this.targa = targa;
-    }
 
 }

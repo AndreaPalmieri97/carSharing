@@ -1,11 +1,17 @@
 package com.example.carSharing.Entities;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.hibernate.annotations.Check;
 
 import java.time.LocalDateTime;
 @Entity
 @Table
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 
 public class Noleggio {
     @Id
@@ -23,63 +29,5 @@ public class Noleggio {
     @ManyToOne(fetch = FetchType.LAZY)
     private Veicolo veicolo;
 
-    public Noleggio() {
-    }
 
-    public Noleggio(int id, LocalDateTime dataInizio, LocalDateTime dataFine, double costoTotale, Utente utente, Veicolo veicolo) {
-        this.id = id;
-        this.dataInizio = dataInizio;
-        this.dataFine = dataFine;
-        this.costoTotale = costoTotale;
-        this.utente = utente;
-        this.veicolo = veicolo;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public LocalDateTime getDataInizio() {
-        return dataInizio;
-    }
-
-    public void setDataInizio(LocalDateTime dataInizio) {
-        this.dataInizio = dataInizio;
-    }
-
-    public LocalDateTime getDataFine() {
-        return dataFine;
-    }
-
-    public void setDataFine(LocalDateTime dataFine) {
-        this.dataFine = dataFine;
-    }
-
-    public double getCostoTotale() {
-        return costoTotale;
-    }
-
-    public void setCostoTotale(double costoTotale) {
-        this.costoTotale = costoTotale;
-    }
-
-    public Utente getUtente() {
-        return utente;
-    }
-
-    public void setUtente(Utente utente) {
-        this.utente = utente;
-    }
-
-    public Veicolo getVeicolo() {
-        return veicolo;
-    }
-
-    public void setVeicolo(Veicolo veicolo) {
-        this.veicolo = veicolo;
-    }
 }
